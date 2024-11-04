@@ -1,10 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class Content extends StatelessWidget {
-  const Content({super.key});
+
+  String emailll,nameee;
+
+
+  Content({required this.emailll,required this.nameee});
 
   @override
   Widget build(BuildContext context) {
+    var email=TextEditingController();
+    var name=TextEditingController();
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     return  Padding(
@@ -44,19 +50,20 @@ class Content extends StatelessWidget {
                           padding: EdgeInsets.only(top: 10),
                           color: Colors.transparent,
                           height: screenHeight * 0.1,
+                          width: screenWidth*.6,
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Hello Rhea!",
+                                "Hello $nameee ",
                                 style: TextStyle(
-                                  fontSize: 30,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                 ),
                               ),
                               Text(
-                                "Welcome back!",
+                                "email:$emailll",
                                 style: TextStyle(
                                   fontSize: 15,
                                   color: Colors.white,
@@ -80,11 +87,11 @@ class Content extends StatelessWidget {
                                   color: Colors.white,
                                 ),
                               ),
-
+                              SizedBox(width: 5),
                               CircleAvatar(
                                 radius: 20,
                                 backgroundImage:
-                                AssetImage('android/app/assets/4.jpg'),
+                                AssetImage('assets/4.jpg'),
                                 backgroundColor: Colors.purple,
                               ),
                             ],
@@ -163,7 +170,7 @@ class Content extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10),
                         child: Image.asset(
-                          'android/app/assets/3.jpg',
+                          'assets/3-removebg-preview.png',
                           height: screenHeight * 0.18,
                           fit: BoxFit.fill,
                         ),
@@ -286,11 +293,12 @@ class Content extends StatelessWidget {
               ),
             ],
           ),
+
+
+
+
+
           //featured games se leke last ke stack boxes tak wala column
-
-
-
-
 
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -336,7 +344,7 @@ class Content extends StatelessWidget {
                   Opacity(
                     opacity: 0.2,
                     child: Image.asset(
-                      'android/app/assets/puzzlenew.jpeg',
+                      'assets/puzzlenew.jpeg',
                       height: screenHeight * 0.19,
                       width: double.infinity,
                       fit: BoxFit.cover,
@@ -380,7 +388,7 @@ class Content extends StatelessWidget {
                     Opacity(
                       opacity: 0.2,
                       child: Image.asset(
-                        'android/app/assets/5.jpg',
+                        'assets/5.jpg',
                         height: screenHeight * 0.19,
                         width: double.infinity,
                         fit: BoxFit.cover,
